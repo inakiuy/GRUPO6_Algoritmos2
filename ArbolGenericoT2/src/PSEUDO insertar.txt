@@ -1,0 +1,36 @@
+En ARBOL
+insertar(hijo)
+	si hijo <> nulo AND padre <> nulo hacer
+		si padre = "" entonces
+			si this = nulo
+				this <- padre;
+			si no
+				aux <- this;
+				this <- hijo;
+				this.hijos <- aux.hijos;
+			fin si
+		si no
+			si this = nulo	
+				devolver falso;
+			si no
+				aux<-this.buscar padre
+				devolver padre.insertar (hijo)
+			fin si
+		fin si
+	devolver falso;
+	fin si
+fin
+
+En NODO
+insertar(hijo)
+
+	si hijo <> nulo hacer
+		si listaHijos.contiene(hijo) hacer
+			devolver falso;
+		si no
+			listaHijos.add(hijo);
+			devolver verdadero;
+		fin si
+	fin si
+	devolver falso;
+fin

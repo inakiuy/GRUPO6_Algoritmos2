@@ -1,0 +1,36 @@
+ListarIndentado()
+	la raiz tiene indentación cero, recorro el árbol en pre orden, imprimiendo la etiqueta
+del nodo y su nivel. Cada llamada al hijo le paso el nivel en que está aumentando en uno el mio.
+
+EN ARBOL
+ListarIndentado()
+
+	si raiz <> nulo
+		entero n <- 0;
+		raiz.listarIndentadoNodo( entero n );
+		fin si
+	si no hacer
+		imprimir " arbol vacio "
+	fin si
+fin 
+
+EN NODO
+TNodoArbolGenerico( entero n )	
+	imprimir n + " -> " + this.etiqueta;
+	n ++;
+	si hijos <> null hacer
+		hijo <- primer hijo;
+		mientras hijo <> nulo hacer
+			hijo.listarIndentadoNodo( entero n );
+			hijo <- siguiente hermano;
+		fin mientras;
+	fin si
+
+
+
+
+
+
+
+
+

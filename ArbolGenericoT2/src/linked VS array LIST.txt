@@ -1,0 +1,23 @@
+paraLinkedList<E>
+
+    get(int index) es O(n)
+    add(E element) es o (1)
+    add(int index, E element) es O(n)
+    remove(int index) es O(n)
+    Iterator.remove() es o (1) <---principal beneficio de LinkedList<E>
+    ListIterator.add(E element) es o (1) <---principal beneficio de LinkedList<E>
+
+paraArrayList<E>
+
+    get(int index) es o (1) <---principal beneficio de ArrayList<E>
+    add(E element) es amortizado o (1), pero O(n) peor ya que la matriz debe ser redimensionada y copiada
+    add(int index, E element) es O(n-index) amortizado, pero peor (como arriba) O(n)
+    remove(int index) es O(n-index) (es decir, quitar el último es O(1))
+    Iterator.remove() es O(n-index)
+    ListIterator.add(E element) es O(n-index)
+LinkedList<E> permite inserciones de tiempo constante o retiros uso de iteradores, pero sólo acceso secuencial de elementos. En otras palabras, la lista se puede caminar hacia delante o hacia atrás, pero encontrar una posición en la lista lleva tiempo proporcional al tamaño de la lista.
+
+ArrayList<E>, por otro lado, permiten acceso rápido al azar de la lectura, por lo que puedes agarrar cualquier elemento en tiempo constante. Pero añadiendo o eliminando del dondequiera pero al final requiere cambiar todos los elementos de este últimos sobre, ya sea para hacer una abertura o llenar la brecha. Además, si añades más elementos que la capacidad de la matriz subyacente, se asigna una nueva matriz (1,5 veces el tamaño) y la matriz vieja se copia a la nueva, añadiendo así a una lista de matrices es O(n) en el peor caso pero constante en promedio.
+
+
+https://msdn.microsoft.com/es-es/library/system.collections.arraylist(v=vs.110).aspx
