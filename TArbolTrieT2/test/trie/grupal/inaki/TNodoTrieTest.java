@@ -72,7 +72,7 @@ public class TNodoTrieTest {
         System.out.println("insertar");
         String unaPalabra = "andorra";
         TNodoTrie instance = raiz;
-        instance.insertar(unaPalabra);
+        instance.insertar(unaPalabra,"4,6,8");
         assertEquals("aca acab aco andorra", raiz.imprimir());
     }
 }

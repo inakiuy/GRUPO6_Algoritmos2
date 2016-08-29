@@ -57,7 +57,7 @@ public class TArbolTrieTest {
         String palabra = "cocoa";
         TArbolTrie instance = arbol0;
         System.out.println(instance.imprimir());
-        instance.insertar(palabra);
+        instance.insertar(palabra,"4,6,8");
         assertEquals("aca acab aco cocoa", instance.imprimir());
     }
 

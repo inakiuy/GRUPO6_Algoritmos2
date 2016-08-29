@@ -17,12 +17,12 @@ public class TrieMain {
     public static void main(String[] args) {
         // TODO code application logic here
         TArbolTrie trie = new TArbolTrie();
-        trie.insertar("");
-        trie.insertar("banana");
-        trie.insertar("arbol");
-        trie.insertar("gol");
-        trie.insertar("arbolado");
-        trie.insertar("HOLA");
+        trie.insertar("","0");
+        trie.insertar("banana","4");
+        trie.insertar("arbol","4");
+        trie.insertar("gol","6,8");
+        trie.insertar("arbolado","6,10,14");
+        trie.insertar("HOLA","5,7,13");
         
         String resultado = trie.imprimir();
         System.out.println(resultado);

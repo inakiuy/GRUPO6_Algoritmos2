@@ -27,10 +27,10 @@ public class TArbolTrie implements IArbolTrie {
      * @param palabra
      */
     @Override
-    public void insertar(String palabra) {
+    public void insertar(String palabra, String paginas) {
         if ((palabra != null) && (palabra != "")) {
             String aux = palabra.toLowerCase();// Verifica si está en minúscula
-            raiz.insertar(aux);
+            raiz.insertar(aux, paginas);
         } else {
             System.out.println("La palabra no puede ser vacia (\"\") o null");
         }

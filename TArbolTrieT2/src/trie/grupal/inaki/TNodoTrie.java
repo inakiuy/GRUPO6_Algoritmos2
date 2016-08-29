@@ -7,6 +7,9 @@
  */
 package trie.grupal.inaki;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 /**
  *
  * @autor: Luis Tito
@@ -19,6 +22,7 @@ public class TNodoTrie implements INodoTrie {
     private Comparable etiqueta;
     private final TNodoTrie[] hijos;
     private boolean esPalabra;
+    private LinkedList paginas;
     private static final int CANT_CHR_ABECEDARIO = 26;
 
     /**
@@ -29,6 +33,7 @@ public class TNodoTrie implements INodoTrie {
         this.etiqueta = etiqueta.toString();
         this.hijos = new TNodoTrie[CANT_CHR_ABECEDARIO];
         this.esPalabra = false;
+        this.paginas = new LinkedList();
     }
     
     /**
@@ -73,7 +78,7 @@ public class TNodoTrie implements INodoTrie {
      * @param unaPalabra Inserta una palabra del alfabeto ascci.
      */
     @Override
-    public void insertar(String unaPalabra) {
+    public void insertar(String unaPalabra, String paginas) {
         TNodoTrie nodo = this;
         for (int c = 0; c < unaPalabra.length(); c++) {
             int indice = unaPalabra.charAt(c) - 'a';
@@ -82,6 +87,8 @@ public class TNodoTrie implements INodoTrie {
             }
             nodo = nodo.hijos[indice];
         }
+        String[] arrayPaginas = paginas.split(",");
+        this.paginas.addAll(Arrays.asList(arrayPaginas));
         nodo.esPalabra = true;
     }
 
