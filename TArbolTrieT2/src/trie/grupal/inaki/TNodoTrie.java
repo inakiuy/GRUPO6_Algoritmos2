@@ -78,7 +78,7 @@ public class TNodoTrie implements INodoTrie {
      * @param unaPalabra Inserta una palabra del alfabeto ascci.
      */
     @Override
-    public void insertar(String unaPalabra, String paginas) {
+    public void insertar(String unaPalabra) {
         TNodoTrie nodo = this;
         for (int c = 0; c < unaPalabra.length(); c++) {
             int indice = unaPalabra.charAt(c) - 'a';
@@ -87,8 +87,6 @@ public class TNodoTrie implements INodoTrie {
             }
             nodo = nodo.hijos[indice];
         }
-        String[] arrayPaginas = paginas.split(",");
-        this.paginas.addAll(Arrays.asList(arrayPaginas));
         nodo.esPalabra = true;
     }
 

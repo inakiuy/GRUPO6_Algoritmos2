@@ -35,6 +35,6 @@ package trie.grupal.inaki;
 public interface INodoTrie {
     public INodoTrie[] getHijos();
     public boolean buscar(String unaPalabra);
-    public void insertar(String unaPalabra, String paginas);
+    public void insertar(String unaPalabra);
     public String imprimir();
 }

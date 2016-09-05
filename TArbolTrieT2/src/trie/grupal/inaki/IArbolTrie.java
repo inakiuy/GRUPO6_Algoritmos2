@@ -35,7 +35,7 @@ import java.io.Serializable;
  * @author Inaki
  */
 public interface IArbolTrie extends Serializable {
-    public void insertar(String palabra, String paginas);
+    public void insertar(String palabra);
     public String imprimir();
     public boolean buscar(String palabra);
 }
