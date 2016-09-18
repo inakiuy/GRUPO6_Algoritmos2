@@ -104,6 +104,9 @@ public class TNodoArbolGenericoT2 {
         System.out.println(aux);
     }
 
+    private TNodoArbolGenericoT2 getPrimerHijo(){
+        return this.hijos.get(0);
+    }
     /**
      * @return the hijos
      */
