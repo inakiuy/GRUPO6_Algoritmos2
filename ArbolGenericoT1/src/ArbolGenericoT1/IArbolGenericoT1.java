@@ -8,6 +8,7 @@ package ArbolGenericoT1;
 /**
  *
  * @author Inaki
+ * @param <T>
  */
 public interface IArbolGenericoT1 <T>{
     
@@ -15,10 +16,11 @@ public interface IArbolGenericoT1 <T>{
      * Inserta un elemento en el arbol. En caso de ya existir un elemento con la
      * clave indicada en "unElemento", retorna falso.
      *
-     * @param unElemento Elemento a insertar
+     * @param etiqueta
+     * @param padre
      * @return Exito de la operaci�n
      */
-    public boolean insertar(INodoArbolGenericoT1<T> unElemento);
+    public boolean insertar(Comparable etiqueta, Comparable padre);
     
     /**
     * Elimina un elemento dada una etiqueta.
@@ -68,4 +70,10 @@ public interface IArbolGenericoT1 <T>{
      * @return 
      */
     public INodoArbolGenericoT1<T> getRaiz();
+    
+    /**
+     * Retorna el orden del arbol generico.
+     * @return 
+     */
+    public int getOrden();
 }

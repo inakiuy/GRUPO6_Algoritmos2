@@ -5,25 +5,29 @@
  */
 package ArbolGenericoT1;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author Inaki
+ * @param <T>
  */
 public interface INodoArbolGenericoT1<T> {
     /**
      * Inserta un elemento dentro del arbol.
      *
      * @param elemento Elemento a insertar.
+     * @param padre
      * @return Exito de la operacion.
      */
-    public boolean insertar(INodoArbolGenericoT1<T> elemento);
+    public boolean insertar(Comparable elemento, Comparable padre);
     
     /**
      * Elimina un elemento dada una etiqueta.
      * @param unaEtiqueta
      * @return 
      */
-    public INodoArbolGenericoT1<T> eliminar(Comparable unaEtiqueta);
+    public boolean eliminar(Comparable unaEtiqueta);
     
      /**
      * Busca un elemento dentro del arbol con la etiqueta indicada.
@@ -38,29 +42,33 @@ public interface INodoArbolGenericoT1<T> {
      *
      * @param listInOrder
      */
-    public void inOrden(String listInOrder);
+    public void inOrden(LinkedList<String> listInOrder);
         
     /**
      * Imprime en preorden el arbol separado por guiones.
      *
      * @param listPreOrder
      */
-    public void preOrden(String listPreOrder);
+    public void preOrden(LinkedList<String> listPreOrder);
 
     /**
      * Imprime en postorden el arbol separado por guiones.
      *
      * @param listPostOrder
      */
-    public void postOrden(String listPostOrder);
+    public void postOrden(LinkedList<String> listPostOrder);
 
     /**
-     * Retorna los datos contenidos en el elemento.
-     *
-     * @return
+     * 
+     * @return 
      */
-    public T getDato();
-             
+    public boolean unicoHijo();
+    
+    /**
+     * Retorna el mayor orden de los nodos
+     * @return 
+     */
+    public int getOrden(int resultado);
     /**
      * Obtiene el valor de la etiqueta del nodo.
      *
@@ -89,6 +97,12 @@ public interface INodoArbolGenericoT1<T> {
     public INodoArbolGenericoT1<T> getPadre();
     
     /**
+     * Obtiene el hermano anterior
+     * @return 
+     */
+    public INodoArbolGenericoT1<T> getAnteriorHermano();
+            
+    /**
      * Asigna el hijo izquierdo del nodo.
      *
      * @param elemento
@@ -104,7 +118,13 @@ public interface INodoArbolGenericoT1<T> {
     
     /**
      * Setea el padre del nodo actual
-     * @param padre 
+     * @param elemento 
      */
     public void setPadre(INodoArbolGenericoT1<T> elemento);
+    
+    /**
+     * setea el hermano anterior
+     * @param anteriorHermano 
+     */
+    public void setAnteriorHermano(INodoArbolGenericoT1<T> anteriorHermano);
 }

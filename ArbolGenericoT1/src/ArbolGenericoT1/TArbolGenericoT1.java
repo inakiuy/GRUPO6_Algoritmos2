@@ -5,6 +5,8 @@
  */
 package ArbolGenericoT1;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author Inaki
@@ -21,19 +23,19 @@ public class TArbolGenericoT1<T> implements IArbolGenericoT1<T>{
     }
             
     @Override
-    public boolean insertar(INodoArbolGenericoT1<T> unElemento) {
+    public boolean insertar(Comparable etiqueta, Comparable padre) {
         if (esVacio()) {
-            raiz = unElemento;
-            return true;
+               raiz = new TNodoArbolGenericoT1(etiqueta);
+               return true;
         } else {
-            return raiz.insertar(unElemento);
+            return raiz.insertar(etiqueta, padre);
         }
     }
 
     @Override
     public void eliminar(Comparable unaEtiqueta) {
         if (!esVacio()) {
-            this.raiz = this.raiz.eliminar(unaEtiqueta);
+            this.raiz.eliminar(unaEtiqueta);
         }
     }
 
@@ -53,7 +55,12 @@ public class TArbolGenericoT1<T> implements IArbolGenericoT1<T>{
 
     @Override
     public String preOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LinkedList<String> resultado = new LinkedList<>();
+        if (this.esVacio()){
+            return resultado.toString();
+        }
+        this.raiz.preOrden(resultado);
+        return resultado.toString();
     }
 
     @Override
@@ -61,6 +68,20 @@ public class TArbolGenericoT1<T> implements IArbolGenericoT1<T>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * 
+     * @return 
+     */
+    @Override
+    public int getOrden(){
+        int resultado = 0;
+        if (this.esVacio()){
+            return resultado;
+        }
+        this.raiz.getOrden(resultado);
+        return resultado;
+    }
+    
     @Override
     public boolean esVacio() {
         return (raiz == null);
