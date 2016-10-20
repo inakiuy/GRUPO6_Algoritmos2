@@ -327,6 +327,16 @@ public class TGrafoDirigido implements IGrafoDirigido {
     /**
      * BPF del grafo a partir de un vertice, para todos los vertices
      * 
+     * Una Búsqueda en profundidad (en inglés DFS o Depth First Search) es un
+     * algoritmo que permite recorrer todos los nodos de un grafo o árbol
+     * (teoría de grafos) de manera ordenada, pero no uniforme. Su funcionamiento
+     * consiste en ir expandiendo todos y cada uno de los nodos que va localizando,
+     * de forma recurrente, en un camino concreto. Cuando ya no quedan más nodos
+     * que visitar en dicho camino, regresa (Backtracking), de modo que repite
+     * el mismo proceso con cada uno de los hermanos del nodo ya procesado
+     * 
+     * Sería el análogo a una recorrida en preorden.
+     * 
      * @param vertice
      * @return 
      */
@@ -342,6 +352,16 @@ public class TGrafoDirigido implements IGrafoDirigido {
     /**
      * BPF del grafo a partir del vertice con etiquetaOrigen, para todos los vertices
      * 
+     * Una Búsqueda en profundidad (en inglés DFS o Depth First Search) es un
+     * algoritmo que permite recorrer todos los nodos de un grafo o árbol
+     * (teoría de grafos) de manera ordenada, pero no uniforme. Su funcionamiento
+     * consiste en ir expandiendo todos y cada uno de los nodos que va localizando,
+     * de forma recurrente, en un camino concreto. Cuando ya no quedan más nodos
+     * que visitar en dicho camino, regresa (Backtracking), de modo que repite
+     * el mismo proceso con cada uno de los hermanos del nodo ya procesado
+     * 
+     * Sería el análogo a una recorrida en preorden.
+     * 
      * @param etiquetaOrigen
      * @return 
      */
@@ -356,7 +376,17 @@ public class TGrafoDirigido implements IGrafoDirigido {
     }
 
     /**
-     * BPF del grafo, a partir del primer vértice, para todos los vertices
+     * BPF del grafo a partir del vertice con etiquetaOrigen, para todos los vertices
+     * 
+     * Una Búsqueda en profundidad (en inglés DFS o Depth First Search) es un
+     * algoritmo que permite recorrer todos los nodos de un grafo o árbol
+     * (teoría de grafos) de manera ordenada, pero no uniforme. Su funcionamiento
+     * consiste en ir expandiendo todos y cada uno de los nodos que va localizando,
+     * de forma recurrente, en un camino concreto. Cuando ya no quedan más nodos
+     * que visitar en dicho camino, regresa (Backtracking), de modo que repite
+     * el mismo proceso con cada uno de los hermanos del nodo ya procesado
+     * 
+     * Sería el análogo a una recorrida en preorden.
      * 
      * @return 
      */
